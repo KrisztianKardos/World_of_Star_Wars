@@ -50,7 +50,7 @@ function fillTable() {
         } else if (planetsSwapi[i]['residents'].length == 1) {
             var residents = planetsSwapi[i]['residents'].length + ' resident';
             } else {
-                var residents = swapiPlanets[i]['residents'].length + ' residents';
+                var residents = planetsSwapi[i]['residents'].length + ' residents';
             }
 
         cellName.innerHTML = name;

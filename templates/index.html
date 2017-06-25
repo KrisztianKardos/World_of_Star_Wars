@@ -7,6 +7,22 @@
     <script src="/static/swapi.js" defer></script>
     </head>
     <body>
-        <h1>lofasz</h1>
+        <div class="container-fluid">
+            <!-- Title -->
+            <div id="page-title">
+                <h2>Star Wars universe planets</h2>
+            </div>
+            <!-- Table -->
+                <table id="swapiPlanetsTable" class="table table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            {% for header in table_headers %}
+                            <th class="planetsHeader">{{ header }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody id="planetsTable"></tbody>
+                </table>
+        </div>
     </body>
 </html>
