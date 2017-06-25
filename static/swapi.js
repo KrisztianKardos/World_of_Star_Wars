@@ -14,12 +14,12 @@ function apiConnect(apiPageNumber) {
 
 
 function fillTable() {
-    var planetsSwapi = planetsSwapi
-    var table = document.getElementById(planetsTable);
+    var planetsSwapi = planetsSwapi;
+    var table = document.getElementById('planetsTable');
     var planetsSwapiLength = planetsSwapi.length;
 
     for (let i = 0; i < planetsSwapiLength; i++) {
-        var row = document.createEelement('tr');
+        var row = document.createElement('tr');
         row.setAttribute('class', 'planetsRow');
         table.appendChild(row);
 
