@@ -12,7 +12,7 @@ def index():
                     'Diameter',
                     'Climate',
                     'Terrain',
-                    'Surface water percentage',
+                    'Surface water',
                     'Population',
                     'Residents'
                     ]

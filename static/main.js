@@ -18,7 +18,7 @@ function apiConnect(apiPageNumber) {
 
 
 function fillTable(planetsSwapi) {
-    debugger;
+    //debugger;
     var table = document.getElementById('planetsTable');
     var planetsSwapiLength = planetsSwapi.length;
 
@@ -47,7 +47,7 @@ function fillTable(planetsSwapi) {
         var diameter = planetsSwapi[i]['diameter'];
         var climate = planetsSwapi[i]['climate'];
         var terrain = planetsSwapi[i]['terrain'];
-        var surfaceWater = planetsSwapi[i]['surface_water'];
+        var surfaceWater = planetsSwapi[i]['surface_water'] + ' %';
         var population = planetsSwapi[i]['population'];
         if (planetsSwapi[i]['residents'].length == 0) {
             var residents = 'No known residents';
@@ -63,7 +63,17 @@ function fillTable(planetsSwapi) {
         cellTerrain.innerHTML = terrain;
         cellSurfaceWater.innerHTML = surfaceWater;
         cellPopulation.innerHTML = population;
-        cellPopulation.innerHTML = residents;
+
+        // Resident buttons
+        var residentsLink = document.createElement('button');
+        residentsLink.setAttribute('type', 'button');
+        residentsLink.innerText = residents;
+        residentsLink.setAttribute('data-residents', planetsSwapi[i]['residents']);
+        residentsLink.setAttribute('class', 'btn btn-primary residents');
+        residentsLink.setAttribute('data-planetName', planetsSwapi[i]['name']);
+        residentsLink.setAttribute('data-toggle', 'modal');
+        residentsLink.setAttribute('data-target', '#residentsModal');
+        cellResidents.appendChild(residentsLink);
     }
 }
 
